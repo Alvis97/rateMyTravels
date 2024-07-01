@@ -1,16 +1,16 @@
 import Head from "next/head";
-import React from "react-dom";
+import React from "react";
 
 export default function Home() {
-
+  
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>Create Next App</title>
       </Head>
       <main>
         <div>
-          <h1>Homepage</h1>
+          <h1>homepage</h1>
         </div>
       </main>
     </>

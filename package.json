@@ -1,24 +1,25 @@
 {
-  "name": "ratemytravels",
-  "version": "1.0.0",
-  "description": "online community",
-  "main": "index.js",
+  "name": "nextrmt",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@prisma/client": "^5.16.1",
     "next": "^14.2.4",
-    "prisma": "^5.16.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
+    "@types/node": "^20",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.4",
     "typescript": "^5.5.2"
   }
 }
