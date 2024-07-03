@@ -9,7 +9,15 @@
     background-color: rgb(var(--primaryColor));
     margin: 0;
     position: fixed
+    
 }
+
+
+@media (max-width: 800px){
+    .parent{
+     display: none;
+    }
+ } 
 
 .section1{
     width: 300px;
@@ -33,6 +41,12 @@
     justify-content: right;
     align-items: center;
 }
+
+@media (max-width: 800px){
+    .section3{
+     display: none;
+    }
+ }
 
 .CFAButton{
     @include mixins.CFAButton();
