@@ -11,8 +11,6 @@ export default function Home() {
       <Head>
         <title>Homepage</title>
       </Head>
-      <Navigation/>
-      <HamburgerMenu/>
       <main>
         <div>
          
