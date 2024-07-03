@@ -1,4 +1,6 @@
+import { Hamburger } from "@/components/Icons";
 import Navigation from "@/components/Navigations";
+import HamburgerMenu from "@/components/hamburgerMenu";
 import Head from "next/head";
 import React from "react";
 
@@ -10,6 +12,7 @@ export default function Home() {
         <title>Create Next App</title>
       </Head>
       <Navigation/>
+      <HamburgerMenu/>
       <main>
         <div>
          

@@ -1,0 +1,12 @@
+@use "../mixins.module.scss" as mixins;
+
+.parent{
+    height: 60px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+   
+}
+
