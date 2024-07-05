@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React from "react";
 import HamburgerMenu from "@/components/hamburgerMenu";
-import { Hamburger } from "@/components/Icons";
+
 
 
 

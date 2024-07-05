@@ -5,7 +5,9 @@
   --secondaryColor: 0, 22, 77;
   --accentColor: 254, 219, 102;
   --white: 252, 251, 251;
+
   --orange: 255, 196, 80;
+  --red: 176, 79, 79;
   
   --smallRadius: 5px;
   --bigRadius: 10px;
@@ -58,3 +60,24 @@ a {
 main{
   @include mixins.main();
 }
+
+label{
+    font-family: Roboto;
+    color: rgb(var(--secondaryColor));
+    font-size: 14px;
+}
+
+input{
+  font-family: Roboto;
+  font-size: 14px;
+  background-color:transparent;
+  border: 0;
+  border-bottom: 1px solid rgb(var(--secondaryColor));
+  box-shadow: none;
+  margin-bottom: 15px;
+  height: 30px;
+  width: 250px;
+}
+
+
+
