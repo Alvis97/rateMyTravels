@@ -2,7 +2,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import navigationStyle from "../styles/components/navigation.module.scss";
 import { LogoSmall } from "./Icons";
-import Modal from "./modal";
+import Modal from "./Modal";
+
 
 const Navigation: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);

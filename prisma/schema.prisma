@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 // schema.prisma
 
 datasource db {
@@ -16,34 +10,57 @@ generator client {
 }
 
 model User {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  firstName String
-  lastName  String
-  age       Int
-  gender    String
-  visitedCountries VisitedCountry[]
-}
-
-model EuCountry {
-  id         String  @id @default(cuid())
-  name       String
-  capital    String
-  population Int
-  language   String
-  visitedBy  VisitedCountry[]
+  id               String          @id @default(cuid())
+  email            String          @unique
+  firstName        String
+  lastName         String
+  age              Int
+  gender           String
+  password         String
+  Image            String
+  visitedCountries VisitedCountry[] // Define the relation
+  accounts         Account[]
 }
 
 model VisitedCountry {
-  id          String   @id @default(cuid())
-  userId      String
-  countryId   String
-  dateVisited DateTime
+  id                  String    @id @default(cuid()) 
+  userId              String    // User ID of the user who visited
+  countryInitials     String    // Initials of the country (same as the name of the country)
+  safetyRating        Int
+  soloFriendlyRating  Int
+  queerFriendlyRating Int
+  englishLevelRating  Int
+  priceRating         Int
+  user                User      @relation(fields: [userId], references: [id]) // Define the opposite relation
+}
 
-  user   User     @relation(fields: [userId], references: [id])
-  country EuCountry @relation(fields: [countryId], references: [id])
+model EuCountry {
+  id                        String  @id @default(cuid())
+  countryName               String
+  countryInitials           String
+  averageSafetyRating       Int
+  averageSoloFriendlyRating Int
+  averageQueerFriendlyRating Int
+  averageEnglishLevelRating Int
+  averagePriceRating        Int
+}
 
-  @@index([userId], name: "user_idx")
-  @@index([countryId], name: "country_idx")
+model Account {
+  id                    String  @id() @default(uuid())
+  userId                String
+  type                  String
+  provider              String
+  providerAccountId     String
+  refresh_token         String?
+  refresh_token_expires_in Int?
+  access_token          String?
+  expires_at            Int?
+  token_type            String?
+  scope                 String?
+  id_token              String?
+  session_state         String?
+  user                  User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
 }
 
